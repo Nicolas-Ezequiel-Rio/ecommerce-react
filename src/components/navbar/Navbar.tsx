@@ -2,7 +2,7 @@ import { Avatar, Dropdown, Navbar } from 'flowbite-react'
 import { useState } from 'react'
 
 export default function NavbarComponent() {
-  const [logIn, setLogIn] = useState<boolean>(true)
+  const [logIn, setLogIn] = useState<boolean>(false)
   return (
     <Navbar fluid rounded className='bg-mustardYellow'>
       <Navbar.Brand href=''>

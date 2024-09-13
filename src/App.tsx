@@ -10,8 +10,10 @@ export default function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path='signup' element={<Signup />} />
-          <Route path='signin' element={<Signin />} />
+          <Route path='/'>
+            <Route path='signup' element={<Signup />} />
+            <Route path='signin' element={<Signin />} />
+          </Route>
           <Route path='*' element={<h1>404: Page not found.</h1>} />
         </Routes>
       </BrowserRouter>
