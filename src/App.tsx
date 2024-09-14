@@ -17,16 +17,23 @@ export default function App() {
   return (
     <>
       <NavbarComponent toggleSidebar={toggleSidebar} />
-      {isSidebarOpen && <SidebarComponent />}
-
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='signup' element={<Signup />} />
-          <Route path='signin' element={<Signin />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <div style={{ display: 'flex', minHeight: 'calc(100vh - 70px)' }}>
+        {isSidebarOpen && (
+          <div style={{ minWidth: '250px' }}>
+            <SidebarComponent />
+          </div>
+        )}
+        <div style={{ flex: 1, padding: '20px' }}>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='signup' element={<Signup />} />
+              <Route path='signin' element={<Signin />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </div>
     </>
   )
 }

@@ -13,7 +13,7 @@ import {
 
 export function SidebarComponent() {
   return (
-    <Sidebar aria-label='Default sidebar example'>
+    <Sidebar>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
           <Sidebar.Item href='#' icon={HiChartPie}>
