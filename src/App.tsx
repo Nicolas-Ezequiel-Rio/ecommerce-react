@@ -1,8 +1,9 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Signup from './components/signup/signup.tsx'
 import Signin from './components/signin/signin.tsx'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import NavbarComponent from './components/navbar/Navbar.tsx'
 import NotFound from './components/not-found/NotFound.tsx'
+import Home from './components/home/Home.tsx'
 
 export default function App() {
   return (
@@ -11,10 +12,9 @@ export default function App() {
 
       <BrowserRouter>
         <Routes>
-          <Route path='/'>
-            <Route path='signup' element={<Signup />} />
-            <Route path='signin' element={<Signin />} />
-          </Route>
+          <Route path='/' element={<Home />} />
+          <Route path='signup' element={<Signup />} />
+          <Route path='signin' element={<Signin />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
