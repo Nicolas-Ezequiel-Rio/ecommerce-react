@@ -1,14 +1,19 @@
-import { useState } from 'react'
 import { Avatar, Dropdown, Navbar } from 'flowbite-react'
-import { Separator } from '../ui/separator'
+import { useState } from 'react'
+import { TbLayoutSidebar } from 'react-icons/tb'
 import SearchComponent from '../common/search/Search'
 
-export default function NavbarComponent() {
+export default function NavbarComponent({
+  toggleSidebar
+}: {
+  toggleSidebar: () => void
+}) {
   const [logIn, setLogIn] = useState<boolean>(false)
+
   return (
     <>
       <Navbar fluid rounded className='bg-mustardYellow py-5'>
-        <Navbar.Brand href='/'>
+        <Navbar.Brand href='/' className='px-12'>
           <img
             src='./src/assets/logo.png'
             className='mr-3 h-6 sm:h-9'
@@ -18,7 +23,7 @@ export default function NavbarComponent() {
             E-commerce
           </span>
         </Navbar.Brand>
-        <div className='flex md:order-2'>
+        <div className='flex md:order-2 px-12'>
           {logIn ? (
             <>
               <Dropdown
@@ -88,10 +93,16 @@ export default function NavbarComponent() {
           <SearchComponent />
         </Navbar.Collapse>
       </Navbar>
-      <Separator className='bg-black/55' />
 
-      <Navbar className=' bg-mustardYellow'>
-        <Navbar.Collapse>
+      <Navbar fluid className=' bg-mustardYellow'>
+        <Navbar.Collapse className='px-12'>
+          <Navbar.Link>
+            <TbLayoutSidebar
+              onClick={toggleSidebar}
+              className='cursor-pointer size-5'
+            />
+          </Navbar.Link>
+
           <Navbar.Link href='/' active>
             Home
           </Navbar.Link>

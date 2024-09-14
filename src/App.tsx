@@ -4,11 +4,20 @@ import Signin from './components/signin/signin.tsx'
 import NavbarComponent from './components/navbar/Navbar.tsx'
 import NotFound from './components/not-found/NotFound.tsx'
 import Home from './components/home/Home.tsx'
+import { SidebarComponent } from './components/sidebar/Sidebar.tsx'
+import { useState } from 'react'
 
 export default function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prev) => !prev)
+  }
+
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent toggleSidebar={toggleSidebar} />
+      {isSidebarOpen && <SidebarComponent />}
 
       <BrowserRouter>
         <Routes>
