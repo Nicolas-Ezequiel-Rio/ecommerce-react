@@ -13,7 +13,7 @@ import {
 
 export function SidebarComponent() {
   return (
-    <Sidebar>
+    <Sidebar className='bg-mustardYellow'>
       <Sidebar.Items>
         <Sidebar.ItemGroup>
           <Sidebar.Item href='#' icon={HiChartPie}>

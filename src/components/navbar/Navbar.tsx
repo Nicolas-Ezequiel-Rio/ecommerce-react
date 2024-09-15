@@ -2,6 +2,7 @@ import { Avatar, Dropdown, Navbar } from 'flowbite-react'
 import { useState } from 'react'
 import { TbLayoutSidebar } from 'react-icons/tb'
 import SearchComponent from '../common/search/Search'
+import { Separator } from '../ui/separator'
 
 export default function NavbarComponent({
   toggleSidebar
@@ -93,6 +94,7 @@ export default function NavbarComponent({
           <SearchComponent />
         </Navbar.Collapse>
       </Navbar>
+      <Separator className='bg-black/50 shadow-2xl' />
 
       <Navbar fluid className=' bg-mustardYellow'>
         <Navbar.Collapse className='px-12'>

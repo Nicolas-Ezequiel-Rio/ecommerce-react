@@ -17,13 +17,13 @@ export default function App() {
   return (
     <>
       <NavbarComponent toggleSidebar={toggleSidebar} />
-      <div style={{ display: 'flex', minHeight: 'calc(100vh - 70px)' }}>
+      <div className='flex min-h-[calc(100vh-70px)]'>
         {isSidebarOpen && (
-          <div style={{ minWidth: '250px' }}>
+          <div className='min-w-24 bg-mustardYellow'>
             <SidebarComponent />
           </div>
         )}
-        <div style={{ flex: 1, padding: '20px' }}>
+        <div className='flex-1 p-5'>
           <BrowserRouter>
             <Routes>
               <Route path='/' element={<Home />} />
