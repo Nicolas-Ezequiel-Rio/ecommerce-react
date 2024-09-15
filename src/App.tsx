@@ -19,7 +19,7 @@ export default function App() {
       <NavbarComponent toggleSidebar={toggleSidebar} />
       <div className='flex min-h-[calc(100vh-70px)]'>
         {isSidebarOpen && (
-          <div className='min-w-24 bg-mustardYellow'>
+          <div className='min-w-24'>
             <SidebarComponent />
           </div>
         )}

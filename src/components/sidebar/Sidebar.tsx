@@ -13,8 +13,8 @@ import {
 
 export function SidebarComponent() {
   return (
-    <Sidebar className='bg-mustardYellow'>
-      <Sidebar.Items>
+    <Sidebar>
+      <Sidebar.Items className='ml-12'>
         <Sidebar.ItemGroup>
           <Sidebar.Item href='#' icon={HiChartPie}>
             Dashboard
