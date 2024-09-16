@@ -36,10 +36,10 @@ export function SidebarComponent() {
           <Sidebar.Item href='#' icon={HiShoppingBag}>
             Products
           </Sidebar.Item>
-          <Sidebar.Item href='#' icon={HiArrowSmRight}>
+          <Sidebar.Item href='sign' icon={HiArrowSmRight}>
             Sign In
           </Sidebar.Item>
-          <Sidebar.Item href='#' icon={HiTable}>
+          <Sidebar.Item href='sign' icon={HiTable}>
             Sign Up
           </Sidebar.Item>
         </Sidebar.ItemGroup>
