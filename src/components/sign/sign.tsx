@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { FcGoogle } from 'react-icons/fc'
 
 export default function Sign() {
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(true)
   const gridColsClass = active ? 'grid-cols-[auto,1fr]' : 'grid-cols-[1fr,auto]'
 
   return (

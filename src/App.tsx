@@ -1,6 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Signup from './components/signup/signup.tsx'
-import Signin from './components/signin/signin.tsx'
 import Sign from './components/sign/sign.tsx'
 import NavbarComponent from './components/navbar/Navbar.tsx'
 import NotFound from './components/not-found/NotFound.tsx'
@@ -18,7 +16,7 @@ export default function App() {
   return (
     <>
       <NavbarComponent toggleSidebar={toggleSidebar} />
-      <div className='flex min-h-[calc(100vh-70px)]'>
+      <div className='flex min-h-screen'>
         {isSidebarOpen && (
           <div className='min-w-24'>
             <SidebarComponent />
@@ -29,8 +27,6 @@ export default function App() {
             <Routes>
               <Route path='/' element={<Home />} />
               <Route path='sign' element={<Sign />} />
-              {/*<Route path='signup' element={<Signup />} />*/}
-              {/*<Route path='signin' element={<Signin />} />*/}
               <Route path='*' element={<NotFound />} />
             </Routes>
           </BrowserRouter>

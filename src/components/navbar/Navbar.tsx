@@ -79,10 +79,7 @@ export default function NavbarComponent({
                 <Dropdown.Item>Earnings</Dropdown.Item>
                 <Dropdown.Divider />
                 <Dropdown.Item>
-                  <Navbar.Link href='/signin'>Sign In</Navbar.Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Navbar.Link href='/signup'>Sign Up</Navbar.Link>
+                  <Navbar.Link href='/sign'>Sign</Navbar.Link>
                 </Dropdown.Item>
               </Dropdown>
               <Navbar.Toggle />
