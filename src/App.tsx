@@ -1,13 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Sign from './components/sign/sign.tsx'
 import NavbarComponent from './components/navbar/Navbar.tsx'
-import NotFound from './components/not-found/NotFound.tsx'
+import NotFound from './components/common/search/not-found/NotFound.tsx'
 import Home from './components/home/Home.tsx'
-import Shop from './shop/shop.tsx'
-import Cart from './cart/cart.tsx'
+import Shop from './components/shop/shop.tsx'
+import Cart from './components/cart/cart.tsx'
 import { SidebarComponent } from './components/sidebar/Sidebar.tsx'
 import { useState } from 'react'
-import { ProductContextProvider } from './context/products-context.tsx'
+import { ProductContextProvider } from './lib/context/products-context.tsx'
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)

@@ -1,10 +1,10 @@
 import { useState, useEffect, createContext } from 'react'
-import { getAllProducts } from '@/services/fetching-service'
-import { Product } from '@/services/product-interface'
+import { getAllProducts } from '@/lib/services/get-all-products'
+import { Product } from '@/lib/types/product-interface'
 import {
   ProductContextType,
   ProductContextProviderProps
-} from '@/services/products-context-interface'
+} from '@/lib/types/products-context-interface'
 
 export const productContext = createContext<ProductContextType>({
   products: [],
@@ -16,6 +16,8 @@ export const ProductContextProvider = ({
   children
 }: ProductContextProviderProps) => {
   const [products, setProducts] = useState<Product[]>([])
+
+  //HAY QUE SACAR ESTO DEL CONTEXTO Y MOVERLO A SHOP.TSX
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const fetchData = async () => {

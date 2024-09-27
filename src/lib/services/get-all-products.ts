@@ -1,4 +1,4 @@
-import { Product } from './product-interface'
+import { Product } from '../types/product-interface'
 export const getAllProducts = async (): Promise<Product[]> => {
   const res = await fetch(
     'https://api.mercadolibre.com/sites/MLA/search?category=MLA1055'

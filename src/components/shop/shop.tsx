@@ -1,10 +1,12 @@
 import { useContext } from 'react'
-import { productContext } from '@/context/products-context'
+import { productContext } from '@/lib/context/products-context'
+import { Spinner } from 'flowbite-react'
+import NotFound from '@/components/common/search/not-found/NotFound'
 
 export default function Shop() {
   const { products, isLoading, error } = useContext(productContext)
-  if (isLoading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  if (isLoading) return <Spinner />
+  if (error) return <NotFound />
   if (!Array.isArray(products) || products.length === 0)
     return <p>No products available</p>
 
