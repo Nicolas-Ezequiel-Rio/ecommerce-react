@@ -5,7 +5,8 @@ export default function Shop() {
   const { products, isLoading, error } = useContext(productContext)
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
-  if (!Array.isArray(products)) return <p>No products available</p>
+  if (!Array.isArray(products) || products.length === 0)
+    return <p>No products available</p>
 
   return (
     <ul>

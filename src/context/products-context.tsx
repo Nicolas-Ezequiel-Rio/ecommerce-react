@@ -1,20 +1,17 @@
-import { useState, useEffect, createContext, ReactNode } from 'react'
-import { Product } from '@/services/product-interface'
+import { useState, useEffect, createContext } from 'react'
 import { getAllProducts } from '@/services/fetching-service'
+import { Product } from '@/services/product-interface'
+import {
+  ProductContextType,
+  ProductContextProviderProps
+} from '@/services/products-context-interface'
 
-interface ProductContextType {
-  products: Product[]
-  isLoading: boolean
-  error: string | null
-}
 export const productContext = createContext<ProductContextType>({
   products: [],
   isLoading: true,
   error: null
 })
-interface ProductContextProviderProps {
-  children: ReactNode
-}
+
 export const ProductContextProvider = ({
   children
 }: ProductContextProviderProps) => {
