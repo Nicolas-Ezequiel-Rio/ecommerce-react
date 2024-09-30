@@ -1,3 +1,9 @@
+import { CardComponent } from '../common/card/Card'
+
 export default function Home() {
-  return <ul>Home Page</ul>
+  return (
+    <section>
+      <CardComponent />
+    </section>
+  )
 }
