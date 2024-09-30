@@ -1,46 +1,25 @@
-import { useState, useEffect, createContext } from 'react'
-import { getAllProducts } from '@/lib/services/get-all-products'
-import { Product } from '@/lib/types/product-interface'
+import { useState, createContext } from 'react'
 import {
   ProductContextType,
   ProductContextProviderProps
 } from '@/lib/types/products-context-interface'
 
 export const productContext = createContext<ProductContextType>({
-  products: [],
-  isLoading: true,
-  error: null
+  logIn: false,
+  handleLogIn: () => {}
 })
 
 export const ProductContextProvider = ({
   children
 }: ProductContextProviderProps) => {
-  const [products, setProducts] = useState<Product[]>([])
+  const [logIn, setLogIn] = useState<boolean>(false)
 
-  //HAY QUE SACAR ESTO DEL CONTEXTO Y MOVERLO A SHOP.TSX
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const fetchData = async () => {
-    try {
-      setError(null)
-      setIsLoading(true)
-      const data = await getAllProducts()
-      setProducts(data)
-    } catch (err) {
-      console.error(err)
-      err instanceof Error
-        ? setError(err.message)
-        : setError('An unknown error occurred.')
-    } finally {
-      setIsLoading(false)
-    }
+  const handleLogIn = (value: boolean) => {
+    setLogIn(value)
   }
-  useEffect(() => {
-    fetchData()
-  }, [])
 
   return (
-    <productContext.Provider value={{ products, isLoading, error }}>
+    <productContext.Provider value={{ logIn, handleLogIn }}>
       {children}
     </productContext.Provider>
   )

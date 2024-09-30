@@ -1,15 +1,17 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react'
-import { useState } from 'react'
+import { useContext } from 'react'
 import { TbLayoutSidebar } from 'react-icons/tb'
-import SearchComponent from '../common/search/Search'
 import { Separator } from '../ui/separator'
+import { productContext } from '@/lib/context/products-context'
+import SearchComponent from '../common/search/Search'
 
 export default function NavbarComponent({
   toggleSidebar
 }: {
   toggleSidebar: () => void
 }) {
-  const [logIn, setLogIn] = useState<boolean>(false)
+  const { logIn, handleLogIn } = useContext(productContext)
+  console.log(logIn)
 
   return (
     <>
@@ -50,7 +52,7 @@ export default function NavbarComponent({
                 <Dropdown.Divider />
                 <Dropdown.Item
                   onClick={() => {
-                    setLogIn(false)
+                    handleLogIn(false)
                   }}
                 >
                   Sign out

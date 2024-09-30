@@ -18,16 +18,16 @@ export default function App() {
 
   return (
     <>
-      <NavbarComponent toggleSidebar={toggleSidebar} />
-      <div className='flex min-h-screen'>
-        {isSidebarOpen && (
-          <div className='min-w-24'>
-            <SidebarComponent />
-          </div>
-        )}
-        <div className='flex-1 p-5'>
-          <BrowserRouter>
-            <ProductContextProvider>
+      <ProductContextProvider>
+        <NavbarComponent toggleSidebar={toggleSidebar} />
+        <div className='flex min-h-screen'>
+          {isSidebarOpen && (
+            <div className='min-w-24'>
+              <SidebarComponent />
+            </div>
+          )}
+          <div className='flex-1 p-5'>
+            <BrowserRouter>
               <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='shop' element={<Shop />} />
@@ -35,10 +35,10 @@ export default function App() {
                 <Route path='sign' element={<Sign />} />
                 <Route path='*' element={<NotFound />} />
               </Routes>
-            </ProductContextProvider>
-          </BrowserRouter>
+            </BrowserRouter>
+          </div>
         </div>
-      </div>
+      </ProductContextProvider>
     </>
   )
 }

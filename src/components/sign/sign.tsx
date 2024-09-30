@@ -25,9 +25,9 @@ export default function Sign() {
             active ? 'hidden' : ''
           )}
         >
-          <section>
+          <div>
             <h2 className='mb-8 text-xl'>Create Account</h2>
-            <section className='w-full flex justify-between mb-4'>
+            <div className='w-full flex justify-between mb-4'>
               <input
                 type='text'
                 placeholder='First Name'
@@ -38,7 +38,7 @@ export default function Sign() {
                 placeholder='Last Name'
                 className='w-[49%] border'
               ></input>
-            </section>
+            </div>
             <input
               type='text'
               placeholder='Email'
@@ -54,9 +54,9 @@ export default function Sign() {
               placeholder='Confirm Password'
               className='w-full border mb-4'
             ></input>
-          </section>
+          </div>
 
-          <section>
+          <div>
             <input
               type='submit'
               value='Create Account'
@@ -73,11 +73,11 @@ export default function Sign() {
                 Sign In
               </a>
             </p>
-            <p className='flex justify-between items-center mt-2 mb-2 w-full'>
+            <div className='flex justify-between items-center mt-2 mb-2 w-full'>
               <div className='w-[45%] h-1 border-b border-b-black border-transparent border-t-0 border-r-0 border-l-0'></div>
               or
               <div className='w-[45%] h-1 border-b border-b-black border-transparent border-t-0 border-r-0 border-l-0'></div>
-            </p>
+            </div>
 
             <button
               type='submit'
@@ -85,7 +85,7 @@ export default function Sign() {
             >
               <FcGoogle className='text-2xl mr-2' /> Sign Up with Google
             </button>
-          </section>
+          </div>
         </form>
       </div>
       <div
@@ -100,7 +100,7 @@ export default function Sign() {
             active ? '' : 'hidden'
           )}
         >
-          <section>
+          <div>
             <h2 className='mb-8 text-xl'>Login</h2>
             <input
               type='text'
@@ -115,9 +115,9 @@ export default function Sign() {
             <div className='flex justify-end'>
               <a className='text-sm cursor-pointer'>Forgot password?</a>
             </div>
-          </section>
+          </div>
 
-          <section>
+          <div>
             <input
               type='submit'
               value='Login'
@@ -134,11 +134,11 @@ export default function Sign() {
                 Sign Up
               </a>
             </p>
-            <p className='flex justify-between items-center mt-2 mb-2 w-full'>
+            <div className='flex justify-between items-center mt-2 mb-2 w-full'>
               <div className='w-[45%] h-1 border-b border-b-black border-transparent border-t-0 border-r-0 border-l-0'></div>
               or
               <div className='w-[45%] h-1 border-b border-b-black border-transparent border-t-0 border-r-0 border-l-0'></div>
-            </p>
+            </div>
 
             <button
               type='submit'
@@ -146,7 +146,7 @@ export default function Sign() {
             >
               <FcGoogle className='text-2xl mr-2' /> Sign In with Google
             </button>
-          </section>
+          </div>
         </form>
       </div>
     </section>

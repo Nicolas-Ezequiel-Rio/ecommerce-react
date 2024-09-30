@@ -1,10 +1,8 @@
-import { Product } from './product-interface'
 import { ReactNode } from 'react'
 
 export interface ProductContextType {
-  products: Product[]
-  isLoading: boolean
-  error: string | null
+  logIn: boolean
+  handleLogIn: (value: boolean) => void
 }
 export interface ProductContextProviderProps {
   children: ReactNode
