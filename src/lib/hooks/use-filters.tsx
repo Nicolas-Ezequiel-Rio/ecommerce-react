@@ -17,7 +17,8 @@ export function useFilters() {
   const filters = {
     minPrice: searchParams.get('minPrice') || '',
     maxPrice: searchParams.get('maxPrice') || '',
-    category: searchParams.get('category') || ''
+    category: searchParams.get('category') || '',
+    title: searchParams.get('title') || ''
   }
 
   return { filters, updateFilters }
