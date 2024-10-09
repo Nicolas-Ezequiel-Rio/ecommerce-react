@@ -4,6 +4,7 @@ import { Sidebar } from 'flowbite-react'
 import FilterByPrice from '../common/filters/price'
 import { FilterByCategory } from '../common/filters/category'
 import { useFilters } from '@/lib/hooks/use-filters'
+import { FilterByCategoryElectronics } from '../common/filters/electronics'
 
 export function SidebarComponent() {
   const { filters } = useFilters()
@@ -14,7 +15,7 @@ export function SidebarComponent() {
   return (
     <Sidebar
       className={`transition-all duration-300 ease-in-out ${
-        isExpanded ? 'w-96' : 'w-64'
+        isExpanded ? 'w-auto' : 'w-64'
       }`}
     >
       <Sidebar.Items
@@ -31,7 +32,7 @@ export function SidebarComponent() {
 
         {isExpanded && (
           <div className='order-2 px-4'>
-            <FilterByCategory />
+            <FilterByCategoryElectronics />
           </div>
         )}
       </Sidebar.Items>

@@ -27,23 +27,38 @@ export function FilterByCategory() {
       <h3 className='text-center mb-4 font-bold'>Filter by category</h3>
       <div className='flex justify-center my-6'>
         <ListGroup className='w-48'>
-          <ListGroup.Item onClick={() => handleCategorySelect('all')}>
+          <ListGroup.Item
+            active={category === 'all'}
+            onClick={() => handleCategorySelect('all')}
+          >
             <MdOutlineDensitySmall />
             <p className='px-2'>All</p>
           </ListGroup.Item>
-          <ListGroup.Item onClick={() => handleCategorySelect('electronics')}>
+          <ListGroup.Item
+            active={category === 'electronics'}
+            onClick={() => handleCategorySelect('electronics')}
+          >
             <PiCircuitryFill />
             <p className='px-2'>Electronics</p>
           </ListGroup.Item>
-          <ListGroup.Item onClick={() => handleCategorySelect('vehicles')}>
+          <ListGroup.Item
+            active={category === 'vehicles'}
+            onClick={() => handleCategorySelect('vehicles')}
+          >
             <IoCarSharp />
             <p className='px-2'>Vehicles</p>
           </ListGroup.Item>
-          <ListGroup.Item onClick={() => handleCategorySelect('accessories')}>
+          <ListGroup.Item
+            active={category === 'accessories'}
+            onClick={() => handleCategorySelect('accessories')}
+          >
             <MdEmojiObjects />
             <p className='px-2'>Accessories</p>
           </ListGroup.Item>
-          <ListGroup.Item onClick={() => handleCategorySelect('home')}>
+          <ListGroup.Item
+            active={category === 'home'}
+            onClick={() => handleCategorySelect('home')}
+          >
             <FaHome />
             <p className='px-2'>Home</p>
           </ListGroup.Item>

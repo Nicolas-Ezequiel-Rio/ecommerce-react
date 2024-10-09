@@ -18,6 +18,7 @@ export function useFilters() {
     minPrice: searchParams.get('minPrice') || '',
     maxPrice: searchParams.get('maxPrice') || '',
     category: searchParams.get('category') || '',
+    subcategory: searchParams.get('subcategory') || '',
     title: searchParams.get('title') || ''
   }
 
