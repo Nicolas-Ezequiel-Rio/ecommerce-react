@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
 import { Slider } from '@/components/ui/slider'
 import { Label } from 'flowbite-react'
+import { useFilters } from '@/lib/hooks/use-filters'
 
 interface Props {
   initialPriceMin: number
@@ -12,20 +12,17 @@ export default function FilterByPrice({
   initialPriceMin,
   initialPriceMax
 }: Props) {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const { filters, updateFilters } = useFilters()
   const [priceMin, setPriceMin] = useState<number>(
-    parseInt(searchParams.get('priceMin') || initialPriceMin.toString())
+    parseInt(filters.minPrice) || initialPriceMin
   )
   const [priceMax, setPriceMax] = useState<number>(
-    parseInt(searchParams.get('priceMax') || initialPriceMax.toString())
+    parseInt(filters.maxPrice) || initialPriceMax
   )
 
   useEffect(() => {
-    setSearchParams({
-      priceMin: priceMin.toString(),
-      priceMax: priceMax.toString()
-    })
-  }, [priceMin, priceMax, setSearchParams])
+    updateFilters({ minPrice: priceMin, maxPrice: priceMax })
+  }, [priceMin, priceMax])
 
   const handleMinChange = (value: number[]) => {
     const newMin = value[0]
@@ -62,7 +59,7 @@ export default function FilterByPrice({
           max={1000}
           step={1}
           onValueChange={handleMaxChange}
-          className='pt-4'
+          className='py-4'
         />
       </div>
     </section>
