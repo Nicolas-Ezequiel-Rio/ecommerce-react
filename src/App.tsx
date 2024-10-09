@@ -17,7 +17,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <BrowserRouter>
       <ProductContextProvider>
         <NavbarComponent toggleSidebar={toggleSidebar} />
         <div className='flex min-h-screen'>
@@ -27,18 +27,16 @@ export default function App() {
             </div>
           )}
           <div className='flex-1 p-5'>
-            <BrowserRouter>
-              <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='shop' element={<Shop />} />
-                <Route path='cart' element={<Cart />} />
-                <Route path='sign' element={<Sign />} />
-                <Route path='*' element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='shop' element={<Shop />} />
+              <Route path='cart' element={<Cart />} />
+              <Route path='sign' element={<Sign />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
           </div>
         </div>
       </ProductContextProvider>
-    </>
+    </BrowserRouter>
   )
 }
