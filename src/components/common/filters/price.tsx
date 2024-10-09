@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Slider } from '@/components/ui/slider'
-import { Label } from 'flowbite-react'
+import { Button, Label } from 'flowbite-react'
 import { useFilters } from '@/lib/hooks/use-filters'
 
 interface Props {
@@ -38,13 +38,18 @@ export default function FilterByPrice({
     }
   }
 
+  const handleResetFilter = () => {
+    setPriceMin(initialPriceMin)
+    setPriceMax(initialPriceMax)
+  }
+
   return (
     <section className='pr-6'>
       <h3 className='text-center mb-4 font-bold'>Filter by price</h3>
       <div className='my-4'>
         <Label className='font-semibold'>Price Min ({priceMin})</Label>
         <Slider
-          defaultValue={[priceMin]}
+          defaultValue={[initialPriceMin]}
           max={priceMax}
           step={1}
           onValueChange={handleMinChange}
@@ -54,13 +59,18 @@ export default function FilterByPrice({
       <div className='my-4'>
         <Label className='font-semibold mb-6'>Price Max ({priceMax})</Label>
         <Slider
-          defaultValue={[priceMax]}
+          defaultValue={[initialPriceMax]}
           min={priceMin}
           max={1000}
           step={1}
           onValueChange={handleMaxChange}
           className='py-4'
         />
+      </div>
+      <div>
+        <Button className='w-full' onClick={handleResetFilter}>
+          Reset
+        </Button>
       </div>
     </section>
   )

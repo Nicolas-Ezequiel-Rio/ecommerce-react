@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { ListGroup } from 'flowbite-react'
+import { Button, ListGroup } from 'flowbite-react'
 import { IoCarSharp } from 'react-icons/io5'
 import { PiCircuitryFill } from 'react-icons/pi'
 import { FaHome } from 'react-icons/fa'
@@ -16,6 +16,10 @@ export function FilterByCategory() {
 
   const handleCategorySelect = (selectedCategory: string) => {
     setCategory(selectedCategory)
+  }
+
+  const handleResetFilter = () => {
+    setCategory('all')
   }
 
   return (
@@ -44,6 +48,11 @@ export function FilterByCategory() {
             <p className='px-2'>Home</p>
           </ListGroup.Item>
         </ListGroup>
+      </div>
+      <div>
+        <Button className='w-full' onClick={handleResetFilter}>
+          Reset
+        </Button>
       </div>
     </section>
   )
